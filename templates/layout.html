@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+    input[type=text], select,input[type=password],input[type=email]
+    {
+      width: 30%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    *{
+      padding: 8px;
+      background-color: rgb(27, 27, 27);
+      margin: auto;
+      color: white;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    button
+    {
+      border-radius: 10px;
+      width: 30%;
+      background-color: rgb(66, 62, 62);
+    }
+      a
+      {
+        color: rgb(6, 134, 150);
+        font-size: 30px;
+      }
+      a:hover
+      {
+        font-style: italic;
+        color: yellow;
+      }
+      h1
+      {
+        color: pink;
+        font-size: 100px;
+        text-align:center;
+      }
+
+      h2
+      {
+        color: pink;
+        font-size: 60px;
+
+      }
+      h3
+      {
+        color: white;
+        font-size: 40px;
+      }
+
+      li
+      {
+        color: white;
+        font-size: 30px;
+      }
+    
+      th
+      {
+          background-color: #4CAF50;
+          color: white;
+      }
+      th, td
+      {
+          padding: 15px;
+          text-align: left;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class = "container">
+
+    <h1>{% block head %}{% endblock %}</h1>
+    <br><br>
+      {% block body %}{% endblock %}
+    <br><br><br>
+    <a href="{{url_for("home")}}">Home</a>
+    </div>
+  </body>
+</html>
