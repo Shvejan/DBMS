@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}Home!{% endblock %}
+{% block body %}
+  <h1>Roboveda'10</h1>
+  <br><br>
+  <form action="{{ url_for('login') }}" method="post">
+    <h3>Login</h3><br>
+    <input type="text" name="name" placeholder="enter username"><br>
+    <input type="password" name="pass" placeholder="enter password"><br>
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}

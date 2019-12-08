@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+        #data {
+          font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 80%;
+        }
+
+        #data td, #data th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #data tr:nth-child(even){background-color: #f2f2f2;}
+
+        #data tr:hover {background-color: rgb(132, 145, 136);}
+
+        #data th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #4CAF50;
+          color: yellow;
+        }
+        *{
+          padding: 8px;
+          margin: auto;
+          background-color: rgb(27,27,27);
+          color: white;
+
+        }
+        input[type=text],select,input[type=password],input[type=email]
+        {
+          width: 25%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        button
+        {
+          border-radius: 10px;
+          width: 18%;
+          background-color: rgb(66, 62, 62);
+        }
+    </style>
+
+
+    <script>
+      function js(m)
+      {
+
+        alert(m)
+      }
+    </script>
+    <meta charset="utf-8">
+    <title>database</title>
+  </head>
+  <body>
+      <br><br><br>
+      <form>
+        <input type="text" name="name" id="n" placeholder="name">
+        <input type="text" name="college" placeholder="college">
+        <input type="text" name="city" placeholder="city">
+        <input type="text" name="mobile" placeholder="mobile">
+        <input type="text" name="email" placeholder="email">
+        <select>
+            <option value="1">Ravaveera</option>
+            <option value="2">Samanvayi</option>
+            <option value="3">Sarvagami</option>
+            <option value="4">Lakshmanreka</option>
+            <option value="5">Gola</option>
+            <option value="6">Gathi</option>
+            <option value="7">Pushpak</option>
+            <option value="8">Yantra</option>
+        </select><br>
+        <button type="submit" name="add">add</button>
+        <button type="submit" name="modify">modify</button>
+        <button type="submit" name="delete">delete</button>
+      </form>
+      <br><br><br>
+      <table id="data">
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>College</th>
+          <th>City</th>
+          <th>Mobile</th>
+          <th>Email</th>
+          <th>Event</th>
+        </tr>
+          {% for p in x %}
+            <tr onclick=js({{ p.name }})>
+              <td>{{ p.id }}</td>
+              <td>{{ p.name }}</td>
+              <td>{{ p.college }}</td>
+              <td>{{ p.city }}</td>
+              <td>{{ p.mobile }}</td>
+              <td>{{ p.email }}</td>
+              <td>{{ p.e_id }}</td>
+
+            </tr>
+          {% endfor %}
+
+      </table>
+  </body>
+</html>
